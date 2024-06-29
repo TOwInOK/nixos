@@ -7,15 +7,10 @@
         content = {
           type = "gpt";
           partitions = {
-            MBR = {
-                type = "EF02"; # for grub MBR
-                size = "1M";
-                priority = 1;
-            };
             ESP = {
-                priority = 2;
+                priority = 1;
                 name = "ESP";
-                size = "256M"
+                size = "512M"
                 type = "EF00";
                 content = {
                 type = "filesystem";
