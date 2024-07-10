@@ -21,35 +21,32 @@
       inputs.hyprland.follows = "hyprland";
     };
   };
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, hyprland, ... }@inputs: 
-      let
-        system = "x86_64-linux";
-        username = "towinok";
-      in 
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, hyprland, ... }:
+    let
+      system = "x86_64-linux";
+      username = "towinok";
+    in
     {
-
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      
-      specialArgs = {
-        pkgs-stable = import nixpkgs-stable {
-          inherit system;
-          config.allowUnfree = true;
+      nixosConfigurations.towinok-nix = nixpkgs.lib.nixosSystem {
+        system = system;
+        specialArgs = {
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          inherit inputs system;
         };
-        inherit inputs system;
+        modules = [
+          ./nixos/configuration.nix
+          inputs.nixvim.nixosModules.nixvim
+        ];
       };
-      modules = [
-        ./nixos/configuration.nix
-        inputs.nixvim.nixosModules.nixvim
-      ];
-      
-    };
 
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
-      modules = [ 
-        ./home-manager/home.nix
-       ];
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [
+          ./home-manager/home.nix
+        ];
+      };
     };
-      
-  };
 }
