@@ -8,7 +8,7 @@
         margin = "9 13 -10 18";
 
         modules-left = ["hyprland/workspaces" "hyprland/language" "keyboard-state" "hyprland/submap"];
-        modules-center = ["clock" "custom/weather"];
+        modules-center = ["clock"];
         modules-right = ["pulseaudio" "custom/mem" "cpu" "tray"];
 
         "hyprland/workspaces" = {
@@ -38,13 +38,13 @@
         format = "{:%a; %d %b, %I:%M %p}";
     };
 
-    "custom/weather" = {
-        format = "{}";
-        tooltip = true;
-        interval = 1800;
-        exec = "$HOME/.config/waybar/scripts/wttr.py";
-        return-type = "json";
-    };
+    # "custom/weather" = {
+    #     format = "{}";
+    #     tooltip = true;
+    #     interval = 1800;
+    #     exec = "$HOME/.config/waybar/scripts/wttr.py";
+    #     return-type = "json";
+    # };
 
     "pulseaudio" = {
         # scroll-step = 1; # %, can be a float
