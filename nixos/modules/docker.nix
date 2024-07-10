@@ -6,7 +6,7 @@
     };
     oci-containers = {
       backend = "docker";
-      containers = {}
-    }
+      containers = {};
+    };
   };
 }
