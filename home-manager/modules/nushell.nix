@@ -35,7 +35,6 @@
       hbuild = "home-manager switch --flake ~/nixos/";
     };
   };
-};
   carapace.enable = true;
   carapace.enableNushellIntegration = true;
     starship = {
@@ -48,4 +47,5 @@
       };
     };
   };
+};
 }
