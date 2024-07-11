@@ -1,5 +1,6 @@
 {
-  programs.nushell = {
+  programs = {
+    nushell = {
     enable = true;
     extraConfig = ''
        let carapace_completer = {|spans|
@@ -33,6 +34,10 @@
       build = "sudo nixos-rebuild switch ~/nixos/";
       hbuild = "home-manager switch --flake ~/nixos/";
     };
+  };
+};
+  carapace.enable = true;
+  carapace.enableNushellIntegration = true;
     starship = {
       enable = true;
       settings = {
@@ -40,7 +45,6 @@
         character = {
           success_symbo = ">(bold green)";
           error_symbol = ">(bold red)";
-        };
       };
     };
   };
