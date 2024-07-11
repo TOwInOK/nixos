@@ -11,11 +11,11 @@
     prismlauncher # minecraft launcher
     alacritty
     gparted
-    discord
+    vesktop
     obs-studio
     whatsapp-for-linux
     vlc
-
+    spotify
   # Code
     postman
     # https://nixos.wiki/wiki/Rust
@@ -73,6 +73,9 @@
     steam
     lutris
     fastfetch
+    oxker # docker tui
+    mangohud
+    xdg-utils
   ];
 
   fonts.packages = with pkgs; [

@@ -11,5 +11,6 @@
     ./hypr.nix
     ./trim.nix
     ./nixvim/nixvim.nix
+    ./docker.nix
   ];
 }
