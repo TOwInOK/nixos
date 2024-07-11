@@ -8,7 +8,8 @@
       "$mainMod" = "SUPER";
 
       monitor = [",1920x1080@143.98100,auto,1" "Unknown-1,disable"];
-
+      
+      #xwayland = {force_zero_scaling = true;};
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
@@ -117,11 +118,14 @@
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "blueman-manager"
+        "discord"
+        "telegram-descktop"
         "swaync"
       ];
 
       bind = [
-        "CTRL SHIFT, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+        "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         "$mainMod, TAB, exec, swaync-client -t -sw"
         "CTRL, T, exec, alacritty"
         "CTRL, Q, killactive,"
@@ -182,7 +186,9 @@
         # Keyboard backlight
         #"$mainMod, F3, exec, brightnessctl -d *::kbd_backlight set +33%"
         #"$mainMod, F2, exec, brightnessctl -d *::kbd_backlight set 33%-"
-
+        # Cli invoke
+        "CTRL, e, exec, alacritty -e ranger"
+        "Ctrl Shift, Escape, exec, alacritty -e htop"
         # Volume and Media Control
         ", XF86AudioRaiseVolume, exec, pamixer -i 5 "
         ", XF86AudioLowerVolume, exec, pamixer -d 5 "
@@ -193,15 +199,15 @@
         #", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
         #", XF86MonBrightnessUp, exec, brightnessctl set +5% "
 
-        # '', Print, exec, grim -g "$(slurp)" - | swappy -f -''
-        ", Print, exec, satty --early-exit"
+        '', Print, exec, grim -g "$(slurp)" - | swappy -f -''
+        #''CTRL, Print, exec, grim -g "$(satty init-crop --early-exit)"''
 
         # Waybar
         "$mainMod, B, exec, pkill -SIGUSR1 waybar"
         "$mainMod, W, exec, pkill -SIGUSR2 waybar"
 
         # Disable all effects
-        "$mainMod Shift, G, exec, ~/.config/hypr/gamemode.sh "
+        #"$mainMod Shift, G, exec, ~/.config/hypr/gamemode.sh "
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging

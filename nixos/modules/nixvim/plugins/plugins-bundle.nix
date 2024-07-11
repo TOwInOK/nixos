@@ -11,5 +11,6 @@
     ./nix.nix
     ./lsp.nix
     ./cmp.nix
+    ./rustaceanvim.nix
   ];
 }

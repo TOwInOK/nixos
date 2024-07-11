@@ -44,7 +44,10 @@
     cliphist # clipboard
     wl-clipboard # clipboarcr
     wofi # menu-bar
-    satty # screenshotter
+    #satty # screenshotter
+    grim
+    slurp
+    swappy
     swaynotificationcenter # notifications
     hyprpicker # color picker
     xdg-desktop-portal-hyprland
@@ -52,6 +55,7 @@
     pipewire
     pulseaudio
     pamixer
+    pavucontrol
   # Other
     home-manager
     carapace
@@ -63,10 +67,12 @@
     brightnessctl
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
-    kdePackages.qt6ct
+    #kdePackages.qt6ct
     ntfs3g
     gamemode # for games
     steam
+    lutris
+    fastfetch
   ];
 
   fonts.packages = with pkgs; [
