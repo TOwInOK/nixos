@@ -1,4 +1,4 @@
-# nixos
+# Nios rice
 
 ```bash
 git clone https://github.com/TOwInOK/nixos
