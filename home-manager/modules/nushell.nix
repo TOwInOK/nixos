@@ -31,7 +31,7 @@
     shellAliases = {
       vim = "nvim";
       vi = "nvim";
-      build = "sudo nixos-rebuild switch ~/nixos/";
+      build = "sudo nixos-rebuild switch --flake ~/nixos/";
       hbuild = "home-manager switch --flake ~/nixos/";
     };
   };

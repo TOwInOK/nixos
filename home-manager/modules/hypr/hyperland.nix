@@ -39,7 +39,7 @@
 
       general = {
         gaps_in = 5;
-        gaps_out = 20;
+        gaps_out = 10;
         border_size = 3;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
@@ -50,7 +50,7 @@
       };
 
       decoration = {
-        rounding = 10;
+        rounding = 8;
 
         blur = {
           enabled = true;
@@ -72,7 +72,7 @@
         # bezier = "myBezier, 0.33, 0.82, 0.9, -0.08";
 
         animation = [
-          "windows,     1, 7,  myBezier"
+          "windows,     1, 7,  default"
           "windowsOut,  1, 7,  default, popin 80%"
           "border,      1, 10, default"
           "borderangle, 1, 8,  default"
@@ -117,18 +117,19 @@
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "swaync"
       ];
 
       bind = [
-        "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
-
-        "$mainMod, T, exec, alacritty"
-        "$mainMod, Q, killactive,"
+        "CTRL SHIFT, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+        "$mainMod, TAB, exec, swaync-client -t -sw"
+        "CTRL, T, exec, alacritty"
+        "CTRL, Q, killactive,"
         "$mainMod, M, exit,"
         # "$mainMod, E, exec, dolphin"
-        "$mainMod, F, togglefloating,"
-        "$mainMod, D, exec, wofi --show drun"
-        "$mainMod, P, pseudo, # dwindle"
+        "ALT, F, togglefloating,"
+        "CTRL, D, exec, wofi --show drun"
+        #"$mainMod, P, pseudo, # dwindle"
         "$mainMod, J, togglesplit, # dwindle"
 
         # Move focus with mainMod + arrow keys
@@ -138,10 +139,10 @@
         "$mainMod, down,  movefocus, d"
 
         # Moving windows
-        "$mainMod SHIFT, left,  swapwindow, l"
-        "$mainMod SHIFT, right, swapwindow, r"
-        "$mainMod SHIFT, up,    swapwindow, u"
-        "$mainMod SHIFT, down,  swapwindow, d"
+        "ALT, left,  swapwindow, l"
+        "ALT, right, swapwindow, r"
+        "ALT, up,    swapwindow, u"
+        "ALT, down,  swapwindow, d"
 
         # Window resizing                     X  Y
         "$mainMod CTRL, left,  resizeactive, -60 0"
@@ -176,10 +177,11 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
-
+        "$mainMod, left, workspace, e-1"
+        "$mainMod, right, workspace, e+1"
         # Keyboard backlight
-        "$mainMod, F3, exec, brightnessctl -d *::kbd_backlight set +33%"
-        "$mainMod, F2, exec, brightnessctl -d *::kbd_backlight set 33%-"
+        #"$mainMod, F3, exec, brightnessctl -d *::kbd_backlight set +33%"
+        #"$mainMod, F2, exec, brightnessctl -d *::kbd_backlight set 33%-"
 
         # Volume and Media Control
         ", XF86AudioRaiseVolume, exec, pamixer -i 5 "
@@ -188,14 +190,9 @@
         ", XF86AudioMicMute, exec, pamixer --default-source -m"
         
         # Brightness control
-        ", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
-        ", XF86MonBrightnessUp, exec, brightnessctl set +5% "
+        #", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
+        #", XF86MonBrightnessUp, exec, brightnessctl set +5% "
 
-        # Configuration files
-        ''$mainMod SHIFT, N, exec, alacritty -e sh -c "rb"''
-        ''$mainMod SHIFT, C, exec, alacritty -e sh -c "conf"''
-        ''$mainMod SHIFT, H, exec, alacritty -e sh -c "nvim ~/nix/home-manager/modules/wms/hyprland.nix"''
-        ''$mainMod SHIFT, W, exec, alacritty -e sh -c "nvim ~/nix/home-manager/modules/wms/waybar.nix''
         # '', Print, exec, grim -g "$(slurp)" - | swappy -f -''
         ", Print, exec, satty --early-exit"
 

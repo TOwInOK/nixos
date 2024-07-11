@@ -7,7 +7,7 @@
         position = "top";
         margin = "9 13 -10 18";
 
-        modules-left = ["hyprland/workspaces" "hyprland/language" "keyboard-state" "hyprland/submap"];
+        modules-left = ["hyprland/workspaces" "hyprland/language"];
         modules-center = ["clock"];
         modules-right = ["pulseaudio" "custom/mem" "cpu" "tray"];
 
@@ -22,15 +22,15 @@
 	      tooltip = false;
     };
 
-    "keyboard-state" = {
+    #"keyboard-state" = {
         #numlock = true;
-        capslock = true;
-        format = "{icon} ";
-        format-icons = {
-            locked = " ";
-            unlocked = "";
-        };
-    };
+    #    capslock = true;
+    #    format = "{icon} ";
+    #    format-icons = {
+     #       locked = " ";
+     #       unlocked = "";
+    #    };
+    #};
 
     "clock" = {
         # timezone = "America/New_York";
@@ -76,44 +76,44 @@
     };
 
     "cpu" = {
-      interval = 2;
+      interval = 10;
       format = "{usage}% ";
       min-length = 6;
     };
 
-    "temperature" = {
+    #"temperature" = {
         # thermal-zone = 2;
         # hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
-        critical-threshold = 80;
+    #    critical-threshold = 80;
         # format-critical = "{temperatureC}°C {icon}";
-        format = "{temperatureC}°C {icon}";
-        format-icons = ["" "" "" "" ""];
-        tooltip = false;
-    };
+    #    format = "{temperatureC}°C {icon}";
+    #    format-icons = ["" "" "" "" ""];
+    #    tooltip = false;
+    #};
 
-    "backlight" = {
-        device = "intel_backlight";
-        format = "{percent}% {icon}";
-        format-icons = [""];
-        min-length = 7;
-    };
+    #"backlight" = {
+    #    device = "intel_backlight";
+    #    format = "{percent}% {icon}";
+    #    format-icons = [""];
+    #    min-length = 7;
+    #};
 
-    battery = {
-        states = {
-            warning = 30;
-            critical = 15;
-        };
-        format = "{capacity}% {icon}";
-        format-charging = "{capacity}% ";
-        format-plugged = "{capacity}% ";
-        format-alt = "{time} {icon}";
-        format-icons = ["" "" "" "" "" "" "" "" "" ""];
-	on-update = "$HOME/.config/waybar/scripts/check_battery.sh";
-    };
+    #battery = {
+    #    states = {
+    #        warning = 30;
+    #        critical = 15;
+    #    };
+    #    format = "{capacity}% {icon}";
+    #    format-charging = "{capacity}% ";
+    #    format-plugged = "{capacity}% ";
+    #    format-alt = "{time} {icon}";
+    #    format-icons = ["" "" "" "" "" "" "" "" "" ""];
+  #on-update = "$HOME/.config/waybar/scripts/check_battery.sh";
+   # };
 
     tray = {
-        icon-size = 16;
-        spacing = 0;
+        icon-size = 24;
+        spacing = 4;
     };
 
       };
@@ -139,8 +139,8 @@ window#waybar.hidden {
 }
 
 #workspaces {
-    margin-right: 8px;
-    border-radius: 10px;
+    margin-right: 6px;
+    border-radius: 4px;
     transition: none;
     background: #383c4a;
 }
@@ -149,7 +149,7 @@ window#waybar.hidden {
     transition: none;
     color: #7c818c;
     background: transparent;
-    padding: 5px;
+    padding: 8px;
     font-size: 18px;
 }
 
@@ -160,7 +160,8 @@ window#waybar.hidden {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    transition: none;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
     box-shadow: inherit;
     text-shadow: inherit;
     border-radius: inherit;
@@ -175,9 +176,10 @@ window#waybar.hidden {
 }
 
 #language {
-    padding-left: 16px;
-    padding-right: 8px;
-    border-radius: 10px 0px 0px 10px;
+    transition: all 1s linear;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
@@ -222,7 +224,7 @@ window#waybar.hidden {
 #clock {
     padding-left: 16px;
     padding-right: 16px;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 10px 10px 10px;
     transition: none;
     color: #ffffff;
     background: #383c4a;
