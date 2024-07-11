@@ -6,7 +6,7 @@
     ./alacritty.nix
     ./qt.nix
     # hyperland
-    ./hypr/hyprland.nix
+    ./hypr/hyperland.nix
     ./hypr/waybar.nix
   ];
 }

@@ -3,16 +3,21 @@
     enable = true;
     # windowManager.herbstluftwm.enable = true;
     layout = "us";
-    displayManager = {
+   # displayManager = {
       # autoLogin.enable = true;
       # autoLogin.user = "towinok";
-      ly = {
-        enable = true;
-        user = "towinok";
-      };
+   #   ly = {
+   #     enable = true;
+   #     user = "towinok";
+   #   };
+   # };
+   libinput = {
+    enable = true;
+    mouse = {
+      accelProfile = "flat";
     };
+   };
 
-    layout = "us";
     xkbVariant = "";
 
     # libinput = {
@@ -21,7 +26,7 @@
     #   touchpad.accelProfile = "flat";
     # };
 
-    videoDrivers = [ "nvidia" ];
+    #videoDrivers = [ "nvidia" ];
     # deviceSection = ''Option "TearFree" "True"'';
     #displayManager.gdm.enable = true;
     #desktopManager.gnome.enable = true;

@@ -23,20 +23,8 @@
                             content = {
                                 type = "btrfs";
                                 extraArgs = [ "-f" ];
-                                subvolumes = {
-                                    "/rootfs" = {
-                                        mountpoint = "/";
-                                    };
-                                    "/home" = {
-                                        mountOptions = [ "compress=zstd" ];
-                                        mountpoint = "/home";
-                                    };
-                                    "/home/towinok/.config/home-manager" = { };
-                                    "/nix" = {
-                                        mountOptions = [ "compress=zstd" "noatime" ];
-                                        mountpoint = "/nix";
-                                    };
-                                };
+                                mountpoint = "/";
+                                mountOptions = [ "compress=zstd" "noatime" ];
                             };
                         };
                     };

@@ -22,7 +22,7 @@
   # CLI
     git
     htop
-    neofetch
+#    neofetch
     ranger # file manager
     wget
     unzip
@@ -33,6 +33,7 @@
     lazygit # gui for git
     scrot # record screeen
     cava # audio visualizer for alsa
+    nushell
   # Wayland
     xwayland # x-org
     seatd # seat management daemon

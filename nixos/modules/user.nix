@@ -1,12 +1,9 @@
-{ pkgs, ... }: let 
-  user = "towinok";
-  in 
-  {
+{ pkgs, ... }: {
   # https://nixos.wiki/wiki/Nushell
-  programs.nushell = {
-    enable = true;
-    carapace.enable = true;
-    carapace.enableNushellIntegration = true;
+ # programs.nushell = {
+ #   enable = true;
+ #   carapace.enable = true;
+ #   carapace.enableNushellIntegration = true;
     # starship = { enable = true;
     #     settings = {
     #       add_newline = true;
@@ -16,19 +13,19 @@
     #     };
     #   };
     # };
-  };
+ # };
 
   users = {
-    defaultUserShell = pkgs.nushell;
+   defaultUserShell = pkgs.nushell;
 
-    users.${user} = {
+    users.towinok = {
       isNormalUser = true;
       description = "TOwInOK";
       extraGroups = [ "networkmanager" "wheel" "input" "docker" ];
-      packages = with pkgs; [];
+     # packages = with pkgs; [];
     };
   };
 
   # Enable automatic login for the user.
-  services.getty.autologinUser = ${user};
+  services.getty.autologinUser = "towinok";
 }

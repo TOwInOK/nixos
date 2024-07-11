@@ -21,7 +21,7 @@
       inputs.hyprland.follows = "hyprland";
     };
   };
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, hyprland, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, nixvim, ... }:
     let
       system = "x86_64-linux";
       username = "towinok";
@@ -34,11 +34,11 @@
             inherit system;
             config.allowUnfree = true;
           };
-          inherit inputs system;
+          inherit system;
         };
         modules = [
           ./nixos/configuration.nix
-          inputs.nixvim.nixosModules.nixvim
+          nixvim.nixosModules.nixvim
         ];
       };
 

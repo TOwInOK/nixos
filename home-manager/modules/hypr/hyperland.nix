@@ -7,7 +7,7 @@
     settings = {
       "$mainMod" = "SUPER";
 
-      monitor = ",1920x1080@90,auto,1";
+      monitor = [",1920x1080@143.98100,auto,1" "Unknown-1,disable"];
 
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -46,7 +46,7 @@
 
         layout = "dwindle";
 
-        no_cursor_warps = false;
+        #no_cursor_warps = false;
       };
 
       decoration = {
@@ -86,9 +86,9 @@
         preserve_split = true; # you probably want this
       };
 
-      master = {
-        new_is_master = true;
-      };
+     # master = {
+     #   new_is_master = true;
+     # };
 
       gestures = {
         workspace_swipe = true;
@@ -113,7 +113,7 @@
 
       exec-once = [
         "swww init"
-        "swww img ~/Downloads/nixos-chan.png"
+        "swww img ~/wallpapers/dark-willow-interest.jpeg"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
@@ -122,7 +122,7 @@
       bind = [
         "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
-        "$mainMod, Return, exec, alacritty"
+        "$mainMod, T, exec, alacritty"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         # "$mainMod, E, exec, dolphin"
