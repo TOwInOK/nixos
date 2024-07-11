@@ -13,6 +13,9 @@
     gparted
     discord
     obs-studio
+    whatsapp-for-linux
+    vlc
+
   # Code
     postman
     # https://nixos.wiki/wiki/Rust
@@ -39,9 +42,11 @@
     seatd # seat management daemon
     polybar # bar
     cliphist # clipboard
-    wl-clipboard # clipboard
+    wl-clipboard # clipboarcr
     wofi # menu-bar
     satty # screenshotter
+    swaynotificationcenter # notifications
+    hyprpicker # color picker
     xdg-desktop-portal-hyprland
   # Sound
     pipewire
@@ -50,6 +55,7 @@
   # Other
     home-manager
     carapace
+    starship
     zram-generator # for zram swap
     # feh # image viewer
     imv # image viewer
@@ -57,7 +63,10 @@
     brightnessctl
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
+    kdePackages.qt6ct
     ntfs3g
+    gamemode # for games
+    steam
   ];
 
   fonts.packages = with pkgs; [
