@@ -1,21 +1,21 @@
 {
 programs.mangohud = {
   enable = true;
-  settings = '' 
+  settings = 
     {
-      vsync=-1
-      gl_vsync=-2
-      af=4
-      toggle_hud=Shift_R+F12
+      vsync = -1;
+      gl_vsync = -2;
+      af = 4;
+      toggle_hud = "Shift_R+F12";
 
-      preset=4
+      preset = 4;
       #full
 
       #Hud config
         #GPU
-          gpu_stats
+          gpu_stats = true;
         #CPU
-          cpu_stats
+          cpu_stats = true;
        # cpu_temp
        # cpu_power
        # cpu_text=
@@ -25,30 +25,29 @@ programs.mangohud = {
        # cpu_load_color=39f900,fdfd09,b22222
        
        #---
-        vram
-        ram
+        vram = true;
+        ram = true;
       #swap #I don't use it!
       #---
-       fps
-       frametime
+       fps = true;
+       frametime = true;
       #---system info
-       engine_version
-       engine_short_names
-       vulkan_driver
-       wine
-       winesync
+       engine_version = true;
+       engine_short_names = true;
+       vulkan_driver = true;
+       wine = true;
+       winesync = true;
       #fsr
-      fsr
+      fsr = true;
       
       #graphs
       #graphs=
 
       #GUI
-      alpha=0.8
+      alpha = 0.8;
       #background_alpha=0.5
-      table_columns=4
-      cellpadding_y=-0.085
-    } 
-    '';
+      table_columns = 4;
+      cellpadding_y = -0.085;
+    };
   };
 }
