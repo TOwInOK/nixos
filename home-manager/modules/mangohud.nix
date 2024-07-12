@@ -3,12 +3,13 @@ programs.mangohud = {
   enable = true;
   enableSessionWide = true;
   settings = 
-    {
+  {
+      full = false;
       vsync = -1;
       gl_vsync = -2;
       af = 4;
       toggle_hud = "Shift_R+F12";
-
+      position = "bottom-left";
       preset = 4;
       #full
 
