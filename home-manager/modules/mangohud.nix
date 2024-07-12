@@ -1,6 +1,7 @@
 {
 programs.mangohud = {
   enable = true;
+  enableSessionWide = true;
   settings = 
     {
       vsync = -1;
