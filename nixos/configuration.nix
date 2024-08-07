@@ -18,6 +18,4 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ]; # Enabling flakes
 
   system.stateVersion = "24.05"; # 24.05 stable
-
-  zramSwap.enable = true;
 }
